@@ -1,4 +1,5 @@
-# BloodBank
+# Blood Bank
+
 
 ### Option A: NZ Blood Bank System
 
@@ -6,6 +7,7 @@ Objective: The objective of this assignment is to develop an application to stor
 donors and recipients (might include blood bank, hospital, or patient). The app contains several screens, each
 might have relevant menu options.
 
+![127b600e-024c-4bd5-bcfe-b64989435114-cropped2](https://github.com/270292082/BloodBank/assets/171204053/a1fbac2a-e27f-4e28-b161-8be9dddc8dba)
 ### 1. Introduction screen should include:
 &ensp; • Name of the blood bank application, information about NZ Blood Bank, contact details and login /
 registration option.
