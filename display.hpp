@@ -1,5 +1,5 @@
-#ifndef DISPLAY_H
-#define DISPLAY_H
+#ifndef DISPLAY_HPP
+#define DISPLAY_HPP
 
 enum pages {
   logo,
@@ -13,6 +13,6 @@ enum pages {
   booking
 };
 
-void display(pages page);
+void Display(pages page);
 
 #endif

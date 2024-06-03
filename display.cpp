@@ -1,4 +1,5 @@
 #include <iostream>
+#include "intro.hpp"
 using namespace std;
 
 enum pages {
@@ -13,7 +14,9 @@ enum pages {
   booking
 };
 
-void display(pages page) {
+
+// Redirect to the function that will display the correct page.
+void Display(pages page) {
   
   switch(page) {
   case logo:
@@ -37,23 +40,7 @@ void display(pages page) {
     break;
 
   case intro:
-    cout << "-_____________________________-\t\t" << endl;
-    cout << " ╲⟍                        ⟋ ╱\t\tHelixire Lab" << endl;
-    cout << "  ╲  ⟍                  ⟋   ╱\t\t" << endl;
-    cout << "   ╲    ⟍            ⟋     ╱\t\t" << endl;
-    cout << "    ╲      ⟍      ⟋       ╱\t\t" << endl;
-    cout << "     ╲                   ╱\t\t" << endl;
-    cout << "      ╲        ⤫        ╱\t\t" << endl;
-    cout << "       ╲               ╱\t\t" << endl;
-    cout << "        ╲      |      ╱\t\t\t" << endl;
-    cout << "         ╲     |     ╱\t\t\t" << endl;
-    cout << "          ╲    |    ╱\t\t\t" << endl;
-    cout << "           ╲   |   ╱\t\t\t" << endl;
-    cout << "            ╲  |  ╱\t\t\t" << endl;
-    cout << "             ╲ | ╱\t\t\t" << endl;
-    cout << "              ╲ ╱\t\t\tContact: 09 523 5733" << endl;
-    cout << "               *\t\t\t" << endl;
-    cout << endl;
+    IntroDisplay();
     break;
 
 
