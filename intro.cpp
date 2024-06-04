@@ -48,7 +48,8 @@ void IntroDisplay(users user) {
 
 void Intro() {
     int choice;
-    IntroDisplay();
+    users user;
+    IntroDisplay(user);
     cout << "Please select an option >> ";
     cin >> choice;
 

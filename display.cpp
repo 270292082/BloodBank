@@ -40,7 +40,7 @@ void Display(pages page) {
         break;
 
     case intro:
-        IntroDisplay();
+        Intro();
         break;
 
 
