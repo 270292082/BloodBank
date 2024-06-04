@@ -7,6 +7,8 @@ using namespace std;
 struct users {
 	string username = "N/A";
 	string password = "N/A";
+    string fname = "N/A";
+    string lname = "N/A";
 	string dob="N/A";
 	string nationality="N/A";
 	string ethnicity="N/A";

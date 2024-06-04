@@ -1,5 +1,6 @@
 #include <iostream>
 #include "intro.hpp"
+#include "ansi.hpp"
 using namespace std;
 
 enum pages {
@@ -20,6 +21,7 @@ void Display(pages page) {
 
     switch (page) {
     case logo:
+        cout << CRED;
         cout << "-_____________________________-" << endl;
         cout << " \\  o                     o  /" << endl;
         cout << "  \\   o                 o   /" << endl;
@@ -37,6 +39,7 @@ void Display(pages page) {
         cout << "              \\ /" << endl;
         cout << "               *" << endl;
         cout << endl;
+        cout << CDEF;
         break;
 
     case intro:
