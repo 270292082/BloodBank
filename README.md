@@ -82,7 +82,7 @@ files (e.g., Donor_Registration or Recipient_Registration).
 &ensp; • Booking for the donation must access the donor’s full name, dob, recent health condition, date, time,
 and time_availability_at_the_venue_of_donation.
 
-o Time slot in between 9 to 4 pm, system should notify the donor if the slot taken by another.
+&ensp; • Time slot in between 9 to 4 pm, system should notify the donor if the slot taken by another.
 
-• Hint: The system is supposed to serve 01 people at a time. A time slot can be a fixed duration (e.g., 1
+&ensp; • Hint: The system is supposed to serve 01 people at a time. A time slot can be a fixed duration (e.g., 1
 hour).
