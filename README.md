@@ -16,7 +16,7 @@ registration option.
 &ensp; • It must confirm the user category (donor or recipient) when login and registration (See the registration
 screen in Task 3).
 
-&ensp; • It can also be logged in and controlled by an administration account (See Task 8 for more details)
+&ensp; • It can also be logged in and controlled by an administration account (See Task 7 for more details)
 
 ### 2. Donor’s screen should include:
 &ensp; • A menu with the following options:
