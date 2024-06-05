@@ -1,8 +1,9 @@
 #include <iostream>
+#include <vector>
 #include "intro.hpp"
 #include "user.hpp"
 #include "display.hpp"
-#include <vector>
+#include "file.hpp"
 #include "ansi.hpp"
 using namespace std;
 
@@ -15,14 +16,16 @@ void DonorRegDisplay() {
 
     cout << "Please enter the needed informations in order to register." << endl;
 
+    
+    cin.ignore(1, '\n'); // clean the buffer.
     // Collect the user informations.
     for (int i=0; i<sizeof(info_name)/sizeof(string); i++) {
         cout << info_name[i];
-        cin >> val;
+        getline(cin, val);
         info.push_back(val);
     }
 
-    // Store the datas in the user object.
+    // Store the datas in the user object (for now, only used in the display function).
     users user;
     user.username = info[0];
     user.password = info[1];
@@ -38,5 +41,17 @@ void DonorRegDisplay() {
     user.location = info[11];
     user.category = info[12];
     IntroDisplay(user);
+
+    // Store the datas inside a text file.
+    string msg = "";
+    for (int i=0; i<info.size(); i++) {
+        msg+=info[i]+";";
+    }
+    msg+="\n";
+    
+    if (FileStore("Donor_Registration.dat", msg)) {
+        cout << "The datas were successfully collected!" << endl;
+    }
+
 
 }
