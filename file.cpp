@@ -3,6 +3,7 @@
 #include <vector>
 using namespace std;
 
+// Separate a string with a separator.
 vector<string> StringSeparator(string raw_msg, char separator=';') {
     vector<string> baked_msg;
     string word;
@@ -20,10 +21,11 @@ vector<string> StringSeparator(string raw_msg, char separator=';') {
     return baked_msg;
 }
 
-int FileStore(string name, string msg="") {
+// Store the informations inside a file.
+int FileStore(string msg="", string path="Donor_Registration.dat") {
     ofstream file;  
 
-    file.open(name, ios::app);
+    file.open(path, ios::app);
 
     if (!file) {
         cout << "Failed to open/create the file." << endl;
@@ -36,6 +38,7 @@ int FileStore(string name, string msg="") {
     return 0;
 }
 
+// Get the information on a user.
 vector<string> FileGetInfo(string username, string fname="Donor_Registration.dat") {
     ifstream file(fname);
 

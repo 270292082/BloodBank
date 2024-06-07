@@ -68,7 +68,6 @@ void DonorRegInit() {
     user.email = info[10];
     user.location = info[11];
     user.category = info[12];
-    DonorInit(user);
 
     // Store the datas inside a text file.
     string msg = "";
@@ -77,9 +76,12 @@ void DonorRegInit() {
     }
     msg+="\n";
     
-    if (FileStore("Donor_Registration.dat", msg)) {
-        cout << "The datas were successfully collected!" << endl;
+    if (FileStore(msg)) {
+        cout << "Account was successfully created!" << endl;
+    }
+    else {
+        cout << CRED << "An error has occured, impossibility to access the database!" << CDEF << endl;
     }
 
-
+    DonorInit(user);
 }
