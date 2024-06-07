@@ -64,3 +64,5 @@ void Display(pages page) {
 
     }
 }
+
+void TypeText(string msg, )
