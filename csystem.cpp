@@ -10,7 +10,7 @@ void sleep(int millisecs) {
 
 void TypeText(string msg, int milliseconds) {
     for (char c : msg) {
-        cout << c;
+        cout << c << flush;
         sleep(milliseconds);
     }
     cout << endl;
