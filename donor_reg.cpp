@@ -10,7 +10,7 @@ using namespace std;
 
 void DonorRegDisplay() {
     Display(logo);
-    string info_name[] = {"Username : ", "Password : ", "First Name : ", "Last Name : ", "Date of Birth : ", "Nationality : ", "Ethnicity : ", "Gender : ", "Blood Group : ", "Phone : ", "Email : ", "Physical Adress : ", "Donor or Receiver? : "};
+    string info_name[] = {"Username : ", "Password : ", "First Name : ", "Last Name : ", "Date of Birth [MM/DD/YYYY] : ", "Nationality : ", "Ethnicity : ", "Gender : ", "Blood Group : ", "Phone : ", "Email : ", "Physical Adress : ", "Donor or Receiver : "};
     vector<string> info;
     string val;
 
@@ -20,22 +20,31 @@ void DonorRegDisplay() {
 
     
     cin.ignore(1, '\n'); // clean the buffer.
+
+    bool username_valid = false;
     
-    cout << "Username : ";
-    getline(cin, val);
-    
-    // Check if the username entered is already in the database.
-    for(string username : usernames) {
-        if (username == val) {
-            cout << "This username already exist!" << endl;
-            return;
+    // Prevent a user to register with a username that already exist.
+    while(!username_valid) {
+        username_valid = true;
+
+        // Take the username information from the user.
+        cout << info_name[0];
+        getline(cin, val);
+     
+        // Check if the username entered is already in the database.
+        for(string username : usernames) {
+            if (username == val) {
+                cout << "This username already exist!" << endl;
+                cout << "Please select another!" << endl;
+                username_valid = false;
+            }
         }
     }
 
     // Push the username inside the database.
     info.push_back(val);
 
-    // Collect the user informations.
+    // Collect the remaining user informations.
     for (int i=1; i<sizeof(info_name)/sizeof(string); i++) {
         cout << info_name[i];
         getline(cin, val);
