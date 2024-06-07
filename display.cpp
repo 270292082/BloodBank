@@ -65,4 +65,6 @@ void Display(pages page) {
     }
 }
 
-void TypeText(string msg, )
+void TypeText(string msg, int speed) {
+ // Still in need of a definition.
+}

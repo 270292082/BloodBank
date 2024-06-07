@@ -27,3 +27,7 @@ void DonorDisplay(users user) {
     cout << endl;
     cout << CDEF;
 }
+
+void DonorInit(users user) {
+    DonorDisplay(user);
+}

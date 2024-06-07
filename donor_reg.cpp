@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "intro.hpp"
+#include "donor.hpp"
 #include "user.hpp"
 #include "display.hpp"
 #include "file.hpp"
@@ -8,7 +9,7 @@
 using namespace std;
 
 
-void DonorRegDisplay() {
+void DonorRegInit() {
     Display(logo);
     string info_name[] = {"Username : ", "Password : ", "First Name : ", "Last Name : ", "Date of Birth [MM/DD/YYYY] : ", "Nationality : ", "Ethnicity : ", "Gender : ", "Blood Group : ", "Phone : ", "Email : ", "Physical Adress : ", "Donor or Receiver : "};
     vector<string> info;
@@ -67,7 +68,7 @@ void DonorRegDisplay() {
     user.email = info[10];
     user.location = info[11];
     user.category = info[12];
-    IntroDisplay(user);
+    DonorInit(user);
 
     // Store the datas inside a text file.
     string msg = "";
