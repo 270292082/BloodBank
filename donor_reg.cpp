@@ -14,12 +14,29 @@ void DonorRegDisplay() {
     vector<string> info;
     string val;
 
+    vector<string> usernames = GetUsers();
+
     cout << "Please enter the needed informations in order to register." << endl;
 
     
     cin.ignore(1, '\n'); // clean the buffer.
+    
+    cout << "Username : ";
+    getline(cin, val);
+    
+    // Check if the username entered is already in the database.
+    for(string username : usernames) {
+        if (username == val) {
+            cout << "This username already exist!" << endl;
+            return;
+        }
+    }
+
+    // Push the username inside the database.
+    info.push_back(val);
+
     // Collect the user informations.
-    for (int i=0; i<sizeof(info_name)/sizeof(string); i++) {
+    for (int i=1; i<sizeof(info_name)/sizeof(string); i++) {
         cout << info_name[i];
         getline(cin, val);
         info.push_back(val);

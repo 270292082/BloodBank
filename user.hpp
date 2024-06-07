@@ -2,6 +2,8 @@
 #define USER_HPP
 
 #include <string>
+#include <vector>
+#include <string>
 using namespace std;
 
 struct users {
@@ -21,5 +23,7 @@ struct users {
 	string last_donation="N/A";
 	string category="N/A";
 };
+
+vector<string> GetUsers(string path="Donor_Registration.dat", char separator=';');
 
 #endif
