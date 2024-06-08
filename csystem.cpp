@@ -54,23 +54,3 @@ int FileStore(string msg="", string path="Donor_Registration.dat") {
     file.close();
     return 0;
 }
-
-
-// Get the information on a user.
-vector<string> FileGetInfo(string username, string fname="Donor_Registration.dat") {
-    ifstream file(fname);
-
-    string raw_line;
-    vector<string> baked_line;
-
-    // Check if the username is the one we want.
-    while(getline(file, raw_line)) {
-        baked_line = StringSeparator(raw_line); 
-        if (baked_line[0] == username) {
-            break;
-        }
-    }
-
-    // Return the informations of the user.
-    return baked_line;
-}
