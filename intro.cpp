@@ -1,6 +1,6 @@
 #include <iostream>
 #include "user.hpp"
-#include "donor_reg.hpp"
+#include "reg.hpp"
 #include "ansi.hpp"
 using namespace std;
 
