@@ -5,9 +5,10 @@
 #include <vector>
 using namespace std;
 
-string SelectUsername(vector<string> usernames, string info_name);
+string SelectUsername(vector<string> usernames, vector<string> info_name);
 string SelectCategory();
-vector<string> SelectConditions();
+string SelectConditions();
+void StoreConfig(vector<string> info);
 void DonorRegInit();
 
 
