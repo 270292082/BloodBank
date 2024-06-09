@@ -61,7 +61,10 @@ void StoreConfig(vector<string> info) {
     // Store the datas inside a text file.
     string msg="";
     for (int i=0; i<info.size(); i++) {
-        msg+=info[i]+",";
+        msg+=info[i];
+        if (i!=info.size()-1){
+            msg+=',';
+        }
     }
     msg+="\n";
 
