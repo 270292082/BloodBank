@@ -15,7 +15,7 @@ struct users {
 	string nationality="N/A";
 	string ethnicity="N/A";
 	string gender="N/A";
-	string* conditions=nullptr;
+	vector<string> conditions;
 	string blood_group="N/A";
 	string phone="N/A";
 	string email="N/A";
@@ -24,7 +24,7 @@ struct users {
 	string category="N/A";
 };
 
-vector<string> GetUsers(string path="Donor_Registration.dat", char separator=';');
+vector<string> GetUsers(string path="Donor_Registration.dat", char separator=',');
 vector<string> GetInfo(string username, string fname="Donor_Registration.dat");
 
 #endif

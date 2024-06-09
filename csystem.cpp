@@ -6,6 +6,9 @@
 #include <fstream>
 using namespace std;
 
+#define success 1;
+#define fail -1;
+
 void sleep(int millisecs) {
     this_thread::sleep_for(chrono::milliseconds(millisecs)); 
 }
@@ -20,13 +23,13 @@ void TypeText(string msg, int milliseconds) {
 
 
 // Separate a string with a separator.
-vector<string> StringSeparator(string raw_msg, char separator=';') {
+vector<string> StringSeparator(string raw_msg, char separator=',') {
     vector<string> baked_msg;
     string word;
 
     // Read and Split the characters with the separator.
     for (char c : raw_msg) {
-        if (c == separator) {
+        if (c == separator || c == '\0') {
             baked_msg.push_back(word);
             word = "";
             continue;
@@ -46,11 +49,12 @@ int FileStore(string msg="", string path="Donor_Registration.dat") {
 
     if (!file) {
         cout << "Failed to open/create the file." << endl;
-        return 1;
+        return fail;
     }
 
     file << msg;
 
     file.close();
-    return 0;
+    cout << "FS : Success!" << endl;
+    return success;
 }

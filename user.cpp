@@ -6,7 +6,7 @@ using namespace std;
 
 
 // Get the usernames and store them in a vector.
-vector<string> GetUsers(string path="Donor_Registration.dat", char separator=';') {
+vector<string> GetUsers(string path="Donor_Registration.dat", char separator=',') {
     ifstream file(path);
     vector<string> users;
 
