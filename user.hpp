@@ -26,5 +26,6 @@ struct users {
 
 vector<string> GetUsers(string path="Donor_Registration.dat", char separator=',');
 vector<string> GetInfo(string username, string fname="Donor_Registration.dat");
+vector<vector<string>> GetFilteredUsers(vector<string> filters);
 
 #endif
