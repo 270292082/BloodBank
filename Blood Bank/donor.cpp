@@ -16,7 +16,7 @@ void DonorDisplay(users user) {
     cout << "     \\      o     o      /\t\t|_|  |_|\\___|_|_/_/\\_\\_|_|  \\___|  |______\\__,_|_.__/" << endl;
     cout << "      \\       o o       /\t\t" << endl;
     cout << "       \\       o       /\t\t" << CTHIN << "Welcome back " << user.fname << "!" << CDEF << CRED << endl;
-    cout << "        \\      o      /\t\t\t" << CTHIN << "You are a " << user.category << "." << CDEF << CRED << endl;
+    cout << "        \\      o      /\t\t\t" << CTHIN << "You are a Donor." << CDEF << CRED << endl;
     cout << "         \\     o     /\t\t\t" << CTHIN << "1. Procedure to donate blood" << CDEF << CRED << endl;
     cout << "          \\    o    /\t\t\t" << CTHIN << "2. Benefit of blood donation" << CDEF << CRED << endl;
     cout << "           \\   o   /\t\t\t" << CTHIN << "3. Managing informations" << CDEF << CRED << endl;
