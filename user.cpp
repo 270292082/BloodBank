@@ -67,7 +67,7 @@ vector<vector<string>> GetFilteredUsers(vector<string> filters) {
             // Iterate through the filters.
             for(string filter : filters) {
                 
-                // Check if the filter can be applied to this user, if yes, store it's username if not already stored.
+                // Check if the filter can be applied to this user, if yes, store it's username if not already stored & it's info.
                 if (info == filter && filtered.size() == 0) {
                     filtered.push_back(usr_infos[0]);
                     filtered.push_back(info);
