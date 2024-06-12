@@ -2,6 +2,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include "intro.hpp"
 
 using namespace std;
 
@@ -65,8 +66,8 @@ void login() {
     cin >> username;
 
     if (!usernameExists(username)) {
-        cout << "No username." << endl;
-        return;
+        cout << "No username, Please try again." << endl;
+        Intro();
     }
 
     // Allow up to 3 attempts to login
