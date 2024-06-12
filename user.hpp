@@ -24,8 +24,10 @@ struct users {
 	string category="N/A";
 };
 
-vector<string> GetUsers(string path="Donor_Registration.dat", char separator=',');
-vector<string> GetInfo(string username, string fname="Donor_Registration.dat");
+vector<string> GetUsers(string path="Registration.dat", char separator=',');
+vector<string> GetInfo(string username, string fname="Registration.dat");
 vector<vector<string>> GetFilteredUsers(vector<string> filters);
+void DisplayFilteredUsers(vector<vector<string>> users_info);
+void DisplayUserInfoByName(vector<string> name);
 
 #endif

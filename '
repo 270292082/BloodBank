@@ -45,8 +45,6 @@ void ReceiverInit(users user) {
         case 2:
             cout << "Specify your filters separating them with a coma: ";
             getline(cin, raw_filter);
-            filter = StringSeparator(raw_filter, ',');
-            GetFilteredUsers(filter);
             break;
         case 3:
             break;

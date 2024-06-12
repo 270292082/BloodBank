@@ -1,8 +1,19 @@
 #include <iostream>
 #include "display.hpp"
-#include "csystem.hpp"
+#include "receiver.hpp"
+#include "user.hpp"
 using namespace std;
 
 int main() {
-    Display(intro);
+
+    vector<string> name {"Thomas", "Wongsokarto"};
+    DisplayUserInfoByName(name);
+
+    /*
+    vector<string> filter = {"Donor"};
+
+    vector<vector<string>> user_data = GetFilteredUsers(filter);
+    DisplayFilteredUsers(user_data);
+    */
 }
+

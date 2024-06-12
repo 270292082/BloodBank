@@ -33,7 +33,7 @@ void Intro() {
     int choice;
     users user;
     IntroDisplay();
-    cout << "Please select an option >> ";
+    cout << "Please select an option : ";
     cin >> choice;
 
     switch (choice) {

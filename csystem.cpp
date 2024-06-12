@@ -23,7 +23,7 @@ void TypeText(string msg, int milliseconds) {
 
 
 // Separate a string with a separator.
-vector<string> StringSeparator(string raw_msg, char separator=',') {
+vector<string> StringSeparator(string raw_msg, char separator=';') {
     vector<string> baked_msg;
     string word;
 
@@ -37,12 +37,16 @@ vector<string> StringSeparator(string raw_msg, char separator=',') {
         word+=c;
     }
 
+    if (word!="") {
+        baked_msg.push_back(word);
+    }
+
     return baked_msg;
 }
 
 
 // Store the informations inside a file.
-int FileStore(string msg="", string path="Donor_Registration.dat") {
+int FileStore(string msg="", string path="Registration.dat") {
     ofstream file;  
 
     file.open(path, ios::app);
@@ -55,6 +59,5 @@ int FileStore(string msg="", string path="Donor_Registration.dat") {
     file << msg;
 
     file.close();
-    cout << "FS : Success!" << endl;
     return success;
 }

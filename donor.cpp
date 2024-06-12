@@ -47,6 +47,8 @@ void DonorInit(users user) {
             break;
         case 4:
             return;
+        default:
+            cout << CRED << "Please choose a valid option!" << endl;
         }
     }
 }

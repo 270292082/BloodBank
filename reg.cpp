@@ -50,7 +50,7 @@ string SelectCategory() {
 string SelectConditions() {
     string val;
 
-    cout << "Conditions (enter them with a ';' between each ones, if you don't have any type 'none') : ";
+    cout << "Conditions (enter them with a coma between each ones, if you don't have any type 'none') : ";
     cin.ignore(1, '\n'); // clean the buffer.
     getline(cin, val);
 
@@ -63,14 +63,13 @@ void StoreConfig(vector<string> info) {
     for (int i=0; i<info.size(); i++) {
         msg+=info[i];
         if (i!=info.size()-1){
-            msg+=',';
+            msg+=';';
         }
     }
     msg+="\n";
 
 
-    cout << msg << endl;
-    if (FileStore(msg)) {
+    if (FileStore(msg, "Registration.dat")) {
         cout << "Account was successfully created!" << endl;
     }
     else {
@@ -110,7 +109,7 @@ void DonorRegInit() {
 
     //Prompt the user to specify his conditions.
     string raw_conditions = SelectConditions();
-    vector<string> baked_conditions = StringSeparator(raw_conditions);
+    vector<string> baked_conditions = StringSeparator(raw_conditions, ';');
     info.push_back(raw_conditions);
 
 
