@@ -1,10 +1,31 @@
 #include <iostream>
+#include "display.hpp"
 #include "ansi.hpp"
+#include "reg.hpp"
 #include <vector>
 #include <string>
 #include <fstream>
 #include "csystem.hpp"
 using namespace std;
+
+
+struct users {
+	string username = "N/A";
+	string password = "N/A";
+    string fname = "N/A";
+    string lname = "N/A";
+	string dob="N/A";
+	string nationality="N/A";
+	string ethnicity="N/A";
+	string gender="N/A";
+	vector<string> conditions;
+	string blood_group="N/A";
+	string phone="N/A";
+	string email="N/A";
+	string location="N/A";
+	string last_donation="N/A";
+	string category="N/A";
+};
 
 
 // Get the usernames and store them in a vector.
@@ -154,8 +175,67 @@ vector<vector<string>> GetData(string path="Registration.dat") {
     return usrs;
 }
 
-int ModifyData(string user) {
-    // Need the write the functions for modifying the user data.
-    return 0;
+// Allow the user to modify his data.
+int ModifyData(users* user) {
+    cout << CLEAR;
+    Display(logo);
+    vector<vector<string>> usrs = GetData();
+    vector<string> new_info = CollectUsrInfo();
+    int usr_line;
+    string msg;
+
+
+    // Look the line of the user.
+    for(int c=0; c<usrs.size(); c++) {
+        if (usrs[c][0] == (*user).username) {
+            usr_line = c;
+            break;
+        }
+    }
+
+    // Replace the line in the config by the new info.
+    usrs[usr_line] = new_info;
+
+
+    // Transform the freshly new data into the config format.
+    for(vector<string> usr : usrs) {
+        int usr_size = usr.size();
+        for(int i=0; i<usr_size; i++) {
+            msg+=usr[i];
+            if (i != usr_size) {
+                msg+=';';
+            }
+        }
+        msg+="\n";
+    }
+
+
+
+    // Store the data into the config file.
+    if(!FileStore(msg, true)) {
+        cout << CRED << "Data couldn't be modified!" << CDEF << endl;
+        return -1;
+    }
+
+    cout << "Data successfully updated!" << endl;
+
+
+    // Modify the user object borrowed.
+    (*user).username = new_info[0];
+    (*user).password = new_info[1];
+    (*user).fname = new_info[2];
+    (*user).lname = new_info[3];
+    (*user).dob = new_info[4];
+    (*user).nationality = new_info[5];
+    (*user).ethnicity = new_info[6];
+    (*user).gender = new_info[7];
+    (*user).blood_group = new_info[8];
+    (*user).phone = new_info[9];
+    (*user).email = new_info[10];
+    (*user).location = new_info[11];
+    (*user).category = new_info[12];
+    (*user).conditions = StringSeparator(new_info[13], ';');
+
+    return 1;
 
 }

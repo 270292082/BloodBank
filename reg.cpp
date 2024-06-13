@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "donor.hpp"
+#include "receiver.hpp"
 #include "user.hpp"
 #include "display.hpp"
 #include "csystem.hpp"
@@ -25,6 +26,7 @@ string SelectUsername(vector<string> usernames, vector<string> info_name) {
             if (username == val) {
                 cout << CRED << "This username already exist!\nPlease select another." << CDEF << endl;
                 valid = false;
+                break;
             }
         }
     }
@@ -72,7 +74,7 @@ void StoreConfig(vector<string> info) {
     msg+="\n";
 
 
-    if (FileStore(msg, "Registration.dat")) {
+    if (FileStore(msg)) {
         cout << "Account was successfully created!" << endl;
     }
     else {
@@ -81,9 +83,17 @@ void StoreConfig(vector<string> info) {
     }
 }
 
-vector<string> CollectUsrInfo(string username, vector<string> info_name) {
-    vector<string> info {username};
+vector<string> CollectUsrInfo() {
+    vector<string> usernames = GetUsers();
+    vector<string> info_name {"Password : ", "First Name : ", "Last Name : ", "Date of Birth [MM/DD/YYYY] : ", "Nationality : ", "Ethnicity : ", "Gender : ", "Blood Group : ", "Phone : ", "Email : ", "Physical Adress : ", "Donor or Receiver : "};
+    vector<string> info;
     string val;
+
+    cin.ignore(1, '\n'); // clean the buffer.
+
+    // Prompt the user to choose his username.
+    string username = SelectUsername(usernames, info_name); 
+    info.push_back(username);
 
     // Collect the remaining user informations.
     for (int i=0; i<info_name.size()-1; i++) {
@@ -91,7 +101,15 @@ vector<string> CollectUsrInfo(string username, vector<string> info_name) {
         getline(cin, val);
         info.push_back(val);
     }
-    
+
+    // Prompt the user to choose his category.
+    string category =  SelectCategory();
+    info.push_back(category);
+
+    //Prompt the user to specify his conditions.
+    string raw_conditions = SelectConditions();
+    info.push_back(raw_conditions);
+
     return info;
 }
 
@@ -99,31 +117,14 @@ vector<string> CollectUsrInfo(string username, vector<string> info_name) {
 void DonorRegInit() {
     cout << CLEAR;
     Display(logo);
-    vector<string> info_name {"Password : ", "First Name : ", "Last Name : ", "Date of Birth [MM/DD/YYYY] : ", "Nationality : ", "Ethnicity : ", "Gender : ", "Blood Group : ", "Phone : ", "Email : ", "Physical Adress : ", "Donor or Receiver : "};
-    vector<string> info;
     string val;
-    vector<string> usernames = GetUsers();
 
     cout << "Please enter the needed informations in order to register." << endl;
     
-    cin.ignore(1, '\n'); // clean the buffer.
     
+    vector<string> info;
     
-    // Prompt the user to choose his username.
-    string username = SelectUsername(usernames, info_name); 
-    info.push_back(username);
-
-    info = CollectUsrInfo(username, info_name);
-
-    // Prompt the user to choose his category.
-    string category =  SelectCategory();
-    info.push_back(category);
-
-
-    //Prompt the user to specify his conditions.
-    string raw_conditions = SelectConditions();
-    vector<string> baked_conditions = StringSeparator(raw_conditions, ';');
-    info.push_back(raw_conditions);
+    info = CollectUsrInfo();
 
 
     // Store the datas in the user object (for now, only used in the display function).
@@ -141,13 +142,13 @@ void DonorRegInit() {
     user.email = info[10];
     user.location = info[11];
     user.category = info[12];
-    user.conditions = baked_conditions;
+    user.conditions = StringSeparator(info[13], ';');
 
     StoreConfig(info);
 
     if (info[12] == "Donor") {
         DonorInit(user);
     } else {
-        // redirect to the Receiver init.
+        ReceiverInit(user);
     }
 }

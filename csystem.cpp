@@ -46,10 +46,15 @@ vector<string> StringSeparator(string raw_msg, char separator=';') {
 
 
 // Store the informations inside a file.
-int FileStore(string msg="", string path="Registration.dat") {
+int FileStore(string msg="", bool format=false, string path="Registration.dat") {
     ofstream file;  
 
-    file.open(path, ios::app);
+    if (!format) {
+        file.open(path, ios::app);
+    }
+    else {
+        file.open(path);
+    }
 
     if (!file) {
         cout << "Failed to open/create the file." << endl;

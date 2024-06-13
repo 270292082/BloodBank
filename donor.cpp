@@ -1,6 +1,7 @@
 #include <iostream>
 #include "ansi.hpp"
 #include "user.hpp"
+#include "receiver.hpp"
 #include "csystem.hpp"
 using namespace std;
 
@@ -45,6 +46,14 @@ void DonorInit(users user) {
             TypeText("Donating blood is highly beneficial as it helps save lives and supports the healthcare system.\nBlood donations are crucial for emergency surgeries, cancer treatments, chronic illnesses, and traumatic injuries.\nBy donating, individuals contribute to maintaining an adequate blood supply, ensuring that patients receive the necessary transfusions promptly.\nMoreover, the act of donating blood can improve the donor's health by stimulating blood cell production and providing a free mini-health checkup, which can help detect potential health issues early.\nOverall, blood donation is a simple, selfless act that has a profound impact on the community and individual well-being.\n", 10);
             break;
         case 3:
+            ModifyData(&user);
+            cout << CLEAR;
+            if (user.category == "Donor") {
+                DonorDisplay(user);
+            } else {
+                ReceiverInit(user);
+                return;
+            }
             break;
         case 4:
             return;

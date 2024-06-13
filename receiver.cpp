@@ -1,5 +1,6 @@
 #include <iostream>
 #include "user.hpp"
+#include "donor.hpp"
 #include "ansi.hpp"
 #include "csystem.hpp"
 using namespace std;
@@ -20,7 +21,7 @@ void ReceiverDisplay(users user) {
     cout << "        \\      o      /\t\t\t" << CTHIN << "You are a Receiver." << CDEF << CRED << endl;
     cout << "         \\     o     /\t\t\t" << CTHIN << "1. Access Donor's informations." << CDEF << CRED << endl;
     cout << "          \\    o    /\t\t\t" << CTHIN << "2. Access Donors with Filters." << CDEF << CRED << endl;
-    cout << "           \\   o   /\t\t\t" << CTHIN << "3. Potential Donors contact details" << CDEF << CRED << endl;
+    cout << "           \\   o   /\t\t\t" << CTHIN << "3. Managing informations." << CDEF << CRED << endl;
     cout << "            \\  o  /\t\t\t" << CTHIN << "4. Exit" << CDEF << CRED << endl;
     cout << "             \\ o /\t\t\t" << endl;
     cout << "              \\ /\t\t\t" << endl;
@@ -50,6 +51,14 @@ void ReceiverInit(users user) {
             GetFilteredUsers(filter);
             break;
         case 3:
+            ModifyData(&user);
+            cout << CLEAR;
+            if (user.category == "Receiver") {
+                ReceiverDisplay(user);
+            } else {
+                DonorInit(user);
+                return;
+            }
             break;
         case 4:
             return;
