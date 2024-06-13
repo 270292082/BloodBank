@@ -120,7 +120,7 @@ vector<vector<string>> GetFilteredUsers(vector<string> filters) {
         }
 
         // Save the informations only if they correspond to the filters.
-        if (filtered.size()>0 && filtered.size() == filters.size()+3) {
+        if (filtered.size()>0) {
             fltr_infos.push_back(filtered);
         }
     }

@@ -30,6 +30,7 @@ void ReceiverDisplay(users user) {
     cout << CDEF;
 }
 
+
 void ReceiverInit(users user) {
     ReceiverDisplay(user);
 
@@ -39,16 +40,22 @@ void ReceiverInit(users user) {
         cin >> choice;
         string raw_filter;
         vector<string> filter {"Donor"};
-    
+        vector<vector<string>> users;
+
+
         switch(choice) {
         case 1:
-            GetFilteredUsers(filter); 
+            users = GetFilteredUsers(filter); 
+            DisplayFilteredUsers(users);
             break;
         case 2:
             cout << "Specify your filters separating them with a coma: ";
+            cin.ignore(1, '\n'); // clean the buffer.
             getline(cin, raw_filter);
+
             filter = StringSeparator(raw_filter, ',');
-            GetFilteredUsers(filter);
+            users = GetFilteredUsers(filter);
+            DisplayFilteredUsers(users);
             break;
         case 3:
             ModifyData(&user);
