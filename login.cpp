@@ -7,15 +7,15 @@
 using namespace std;
 
 // check if a username exists in the file
-bool UsernameExists(const string& Donor_username) {
-    ifstream Donor_file("Registration.dat");
-    if (!Donor_file) {
+bool UsernameExists(const string& username) {
+    ifstream file("Registration.dat");
+    if (!file) {
         cerr << "Unable to open file Registration.dat" << endl;
         return false;
     }
 
     string line;
-    while (getline(Donor_file, line)) {
+    while (getline(file, line)) {
         stringstream ss(line);
         string file_username;
 
@@ -23,7 +23,7 @@ bool UsernameExists(const string& Donor_username) {
         getline(ss, file_username, ';');
 
         // Compare with input username
-        if (file_username == Donor_username) {
+        if (file_username == username) {
             return true;
         }
     }
@@ -32,15 +32,15 @@ bool UsernameExists(const string& Donor_username) {
 }
 
 //  fucntion to check login username and password in file
-bool CheckLogin(const string& Donor_username, const string& Donor_password) {
-    ifstream Donor_file("Registration.dat");
-    if (!Donor_file) {
+bool CheckLogin(const string& username, const string& password) {
+    ifstream file("Registration.dat");
+    if (!file) {
         cerr << "Unable to open file Registration.dat" << endl;
         return false;
     }
 
     string line;
-    while (getline(Donor_file, line)) {
+    while (getline(file, line)) {
         stringstream ss(line);
         string file_username, file_password;
 
@@ -49,7 +49,7 @@ bool CheckLogin(const string& Donor_username, const string& Donor_password) {
         getline(ss, file_password, ';');
 
         // Compare with input username and password
-        if (file_username == Donor_username && file_password == Donor_password) {
+        if (file_username == username && file_password == password) {
             return true;
         }
     }

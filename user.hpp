@@ -29,5 +29,6 @@ vector<string> GetInfo(string username, string fname="Registration.dat");
 vector<vector<string>> GetFilteredUsers(vector<string> filters);
 void DisplayFilteredUsers(vector<vector<string>> users_info);
 void DisplayUserInfoByName(vector<string> name);
+vector<vector<string>> GetData(string path="Registration.dat");
 
 #endif

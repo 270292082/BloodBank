@@ -6,6 +6,7 @@
 using namespace std;
 
 void IntroDisplay() {
+    cout << CLEAR;
     cout << CRED;
     cout << endl;
     cout << "-_____________________________-\t\t _    _      _ _      _             _           _ " << endl;

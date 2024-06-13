@@ -135,6 +135,7 @@ void DisplayUserInfoByName(vector<string> name) {
     }
 }
 
+// Get the data of the client database file and store it as a vector.
 vector<vector<string>> GetData(string path="Registration.dat") {
     ifstream file(path);
     vector<vector<string>> usrs;

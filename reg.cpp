@@ -81,9 +81,23 @@ void StoreConfig(vector<string> info) {
     }
 }
 
-// Separate the for loop data gathering to it's different function.
+vector<string> CollectUsrInfo(string username, vector<string> info_name) {
+    vector<string> info {username};
+    string val;
+
+    // Collect the remaining user informations.
+    for (int i=0; i<info_name.size()-1; i++) {
+        cout << info_name[i];
+        getline(cin, val);
+        info.push_back(val);
+    }
+    
+    return info;
+}
+
 
 void DonorRegInit() {
+    cout << CLEAR;
     Display(logo);
     vector<string> info_name {"Password : ", "First Name : ", "Last Name : ", "Date of Birth [MM/DD/YYYY] : ", "Nationality : ", "Ethnicity : ", "Gender : ", "Blood Group : ", "Phone : ", "Email : ", "Physical Adress : ", "Donor or Receiver : "};
     vector<string> info;
@@ -99,13 +113,7 @@ void DonorRegInit() {
     string username = SelectUsername(usernames, info_name); 
     info.push_back(username);
 
-
-    // Collect the remaining user informations.
-    for (int i=0; i<info_name.size()-1; i++) {
-        cout << info_name[i];
-        getline(cin, val);
-        info.push_back(val);
-    }
+    info = CollectUsrInfo(username, info_name);
 
     // Prompt the user to choose his category.
     string category =  SelectCategory();
