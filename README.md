@@ -1,3 +1,8 @@
+Project Made by Thomas and Chanon <br>
+Thomas : 270292082 <br>
+Chanon: 270398147 <br>
+
+
 # Helixire Lab : Blood Bank
 
 
