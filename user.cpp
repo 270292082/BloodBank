@@ -1,4 +1,5 @@
 #include <iostream>
+#include "ansi.hpp"
 #include <vector>
 #include <string>
 #include <fstream>
@@ -132,4 +133,28 @@ void DisplayUserInfoByName(vector<string> name) {
         } 
         cout << endl;
     }
+}
+
+vector<vector<string>> GetData(string path="Registration.dat") {
+    ifstream file(path);
+    vector<vector<string>> usrs;
+    vector<string> usr_info;
+    string raw_line;
+
+    if (!file) {
+        cout << CRED << "Couldn't open the database!" << CDEF << endl;
+    }
+
+    while(getline(file, raw_line)) {
+        usr_info = StringSeparator(raw_line, ';');
+        usrs.push_back(usr_info);
+    }
+    
+    return usrs;
+}
+
+int ModifyData(string user) {
+    // Need the write the functions for modifying the user data.
+    return 0;
+
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "user.hpp"
+#include "login.hpp"
 #include "reg.hpp"
 #include "ansi.hpp"
 using namespace std;
@@ -38,6 +39,7 @@ void Intro() {
 
     switch (choice) {
     case 1:
+        Login();
         break;
     case 2:
         DonorRegInit();

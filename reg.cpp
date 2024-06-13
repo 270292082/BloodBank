@@ -53,6 +53,9 @@ string SelectConditions() {
     cout << "Conditions (enter them with a coma between each ones, if you don't have any type 'none') : ";
     cin.ignore(1, '\n'); // clean the buffer.
     getline(cin, val);
+    if (val=="") {
+        val = "none";
+    }
 
     return val;
 } 
@@ -77,6 +80,8 @@ void StoreConfig(vector<string> info) {
         return;
     }
 }
+
+// Separate the for loop data gathering to it's different function.
 
 void DonorRegInit() {
     Display(logo);

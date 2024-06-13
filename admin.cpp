@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void ReceiverDisplay(users user) {
+void AdminDisplay(users user) {
     cout << CRED;
     cout << endl;
     cout << "-_____________________________-\t\t _    _      _ _      _             _           _ " << endl;
@@ -28,8 +28,8 @@ void ReceiverDisplay(users user) {
     cout << CDEF;
 }
 
-void ReceiverInit(users user) {
-    ReceiverDisplay(user);
+void AdminInit(users user) {
+    AdminDisplay(user);
 
     while(true) {
         int choice;
