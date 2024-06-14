@@ -1,4 +1,6 @@
+#include <string>
+using namespace std;
 
-bool usernameExists(const string& Donor_username);
-bool checkllogin(const string& username, const string& password);
-void login();
+bool UsernameExists(const string& username);
+bool Checkllogin(const string& username, const string& password);
+void Login();
