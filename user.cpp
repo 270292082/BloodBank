@@ -85,6 +85,27 @@ void DisplayFilteredUsers(vector<vector<string>> users_info) {
 }
 
 
+// Get all the users informations.
+vector<vector<string>> GetUsersInfo(string path="Registration.dat") {
+    
+    ifstream file(path);
+    string raw_line;
+    vector<string> baked_line;
+    vector<vector<string>> result;
+
+    if (!file) {
+        cout << CRED << "Could not open the file!" << CDEF << endl;
+        return result;
+    }
+
+    while(getline(file, raw_line)) {
+        baked_line = StringSeparator(raw_line);
+        result.push_back(baked_line);
+    }
+
+    return result;
+}
+
 
 // Sort the user by a filter.
 vector<vector<string>> GetFilteredUsers(vector<string> filters) {

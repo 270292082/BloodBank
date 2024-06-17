@@ -70,6 +70,7 @@ void ReceiverInit(users user) {
         case 4:
             return;
         default:
+            choice = 0;
             cout << CRED << "Please choose a valid option!" << CDEF << endl;
             break;
         }

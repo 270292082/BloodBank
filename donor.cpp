@@ -3,6 +3,7 @@
 #include "user.hpp"
 #include "receiver.hpp"
 #include "csystem.hpp"
+#include "booking.hpp"
 using namespace std;
 
 
@@ -22,8 +23,8 @@ void DonorDisplay(users user) {
     cout << "         \\     o     /\t\t\t" << CTHIN << "1. Procedure to donate blood" << CDEF << CRED << endl;
     cout << "          \\    o    /\t\t\t" << CTHIN << "2. Benefit of blood donation" << CDEF << CRED << endl;
     cout << "           \\   o   /\t\t\t" << CTHIN << "3. Managing informations" << CDEF << CRED << endl;
-    cout << "            \\  o  /\t\t\t" << CTHIN << "4. Exit" << CDEF << CRED << endl;
-    cout << "             \\ o /\t\t\t" << endl;
+    cout << "            \\  o  /\t\t\t" << CTHIN << "4. Booking to donate." << CDEF << CRED << endl;
+    cout << "             \\ o /\t\t\t" << CTHIN << "5. Exit" << CDEF << CRED << endl;
     cout << "              \\ /\t\t\t" << endl;
     cout << "               *\t\t\t" << endl;
     cout << endl;
@@ -56,6 +57,9 @@ void DonorInit(users user) {
             }
             break;
         case 4:
+            DonorBooking(user);
+            break;
+        case 5:
             return;
         default:
             cout << CRED << "Please choose a valid option!" << endl;

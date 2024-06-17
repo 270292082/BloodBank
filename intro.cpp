@@ -26,7 +26,18 @@ void IntroDisplay() {
     cout << "              \\ /\t\t\t" << endl;
     cout << "               *\t\t\t" << endl;
     cout << endl;
+
+    cout << CDEF << CBOLD;
+    cout << ".  ..         .          ,      .  .        ." << endl;
+    cout << "|  ||_   .   _| _ ._  _.-+- _   |_ | _  _  _|" << endl;
+    cout << "|/\\|[ )\\_|  (_](_)[ )(_] | (/,  [_)|(_)(_)(_]" << endl;
+    cout << "         ._|" << endl;
     cout << CDEF;
+    cout << endl;
+    cout << "Regular weekly donations ensure blood and plasma are available for those in need." << endl;
+    cout << "The gift of blood can only be given from one person to another, and there is no substitute. So it's nice to know New Zealand can rely on everyday heroes' generosity to keep the flow of blood and plasma going." << endl;
+    cout << "However, the need for blood and plasma is constant, so we're looking for more lifesavers. By putting aside a small part of your day you can make a life-changing difference, you can become a lifesaver too!" << endl;
+    cout << endl;
     return;
 
 };

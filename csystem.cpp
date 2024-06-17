@@ -21,6 +21,14 @@ void TypeText(string msg, int milliseconds) {
     cout << endl;
 }
 
+string VecstrToString(vector<string> info) {
+    string msg="";
+    for(string i : info) {
+        msg+=i+", ";
+    }
+    return msg;
+}
+
 
 // Separate a string with a separator.
 vector<string> StringSeparator(string raw_msg, char separator=';') {

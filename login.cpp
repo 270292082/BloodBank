@@ -3,7 +3,11 @@
 #include <sstream>
 #include <string>
 #include "intro.hpp"
-
+#include "csystem.hpp"
+#include "donor.hpp"
+#include "receiver.hpp"
+#include "ansi.hpp"
+#include "admin.hpp"
 using namespace std;
 
 // check if a username exists in the file
@@ -65,6 +69,11 @@ void Login() {
     cout << "Enter username: ";
     cin >> username;
 
+    if (username == "admin") {
+        AdminInit();
+        return;
+    }
+
     if (!UsernameExists(username)) {
         cout << "No username, Please try again." << endl;
         Intro();
@@ -78,6 +87,31 @@ void Login() {
         // Check login credentials
         if (CheckLogin(username, password)) {
             cout << "Login successful!" << endl;
+            vector<string> usr_info = GetInfo(username);
+
+            users usr;
+            usr.username = usr_info[0];
+            usr.password = usr_info[1];
+            usr.fname = usr_info[2];
+            usr.lname = usr_info[3];
+            usr.dob = usr_info[4];
+            usr.nationality = usr_info[5];
+            usr.ethnicity = usr_info[6];
+            usr.gender = usr_info[7];
+            usr.blood_group = usr_info[8];
+            usr.phone = usr_info[9];
+            usr.email = usr_info[10];
+            usr.location = usr_info[11];
+            usr.category = usr_info[12];
+            usr.conditions = StringSeparator(usr_info[13]);
+
+            if (usr.category == "Donor") {
+                DonorInit(usr);
+            } else if (usr.category == "Receiver") {
+                ReceiverInit(usr);
+            } else {
+                cout << CRED << "The user info is incorrect in the config file!\nPlease contact your Administrator." << CDEF << endl;
+            }
             return;
         }
         else {

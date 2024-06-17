@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void AdminDisplay(users user) {
+void AdminDisplay() {
     cout << CRED;
     cout << endl;
     cout << "-_____________________________-\t\t _    _      _ _      _             _           _ " << endl;
@@ -28,20 +28,28 @@ void AdminDisplay(users user) {
     cout << CDEF;
 }
 
-void AdminInit(users user) {
-    AdminDisplay(user);
+void AdminInit() {
+    AdminDisplay();
 
     while(true) {
         int choice;
         cout << "Select an option : ";
         cin >> choice;
+        users usr;
     
         switch(choice) {
         case 1:
+            DisplayFilteredUsers(GetUsersInfo());
             break;
         case 2:
             break;
         case 3:
+            cout << "Which client info do you want to modify?" << endl;
+            cout << ">> ";
+            cin >> usr.username;
+            ModifyData(&usr);
+            cout << CLEAR;
+            AdminDisplay();
             break;
         case 4:
             return;
