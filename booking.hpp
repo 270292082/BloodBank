@@ -1,12 +1,13 @@
 #ifndef BOOKING_HPP
 #define BOOKING_HPP
 
-#include <vector>
 #include <string>
+#include "user.hpp"
+using namespace std;
 
-void DonorBooking(const std::vector<std::string>& user);
+void DonorBooking(users& user);
 bool CheckSlotAvailability(const std::string& date, const std::string& time);
-void BookSlot(const std::vector<std::string>& user, const std::string& date, const std::string& time);
+void BookSlot(const users& user, string date, string time);
 bool IsValidTime(const std::string& time);
 
 #endif
