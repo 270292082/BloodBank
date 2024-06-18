@@ -31,7 +31,7 @@ void IntroDisplay() {
     cout << ".  ..         .          ,      .  .        ." << endl;
     cout << "|  ||_   .   _| _ ._  _.-+- _   |_ | _  _  _|" << endl;
     cout << "|/\\|[ )\\_|  (_](_)[ )(_] | (/,  [_)|(_)(_)(_]" << endl;
-    cout << "         ._|" << endl;
+    cout << "       ._|" << endl;
     cout << CDEF;
     cout << endl;
     cout << "Regular weekly donations ensure blood and plasma are available for those in need." << endl;

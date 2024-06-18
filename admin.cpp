@@ -42,6 +42,7 @@ void AdminInit() {
             DisplayFilteredUsers(GetUsersInfo());
             break;
         case 2:
+            DisplayBloodData();
             break;
         case 3:
             cout << "Which client info do you want to modify?" << endl;

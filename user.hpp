@@ -32,5 +32,6 @@ void DisplayFilteredUsers(vector<vector<string>> users_info);
 void DisplayUserInfoByName(vector<string> name);
 vector<vector<string>> GetData(string path="Registration.dat");
 int ModifyData(users* user);
+void DisplayBloodData(string path="Bookings.dat");
 
 #endif

@@ -260,3 +260,22 @@ int ModifyData(users* user) {
     return 1;
 
 }
+
+void DisplayBloodData(string path="Bookings.dat") {
+    ifstream file(path);
+    string raw_line;
+    vector<string> info = {"Date\t\t: ", "Time\t\t: ", "Full Name\t: ", "Date of Birth\t: ", "Conditions\t: ", "Location\t: "};
+    int step=0;
+
+    if (!file) {
+        return;
+    }
+
+    while(getline(file, raw_line)) {
+        for (string words: StringSeparator(raw_line)) {
+            cout << info[step] << words << endl;
+            step++;
+        }  
+    }
+    
+}
