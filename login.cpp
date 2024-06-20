@@ -4,6 +4,7 @@
 #include <string>
 #include "intro.hpp"
 #include "csystem.hpp"
+#include "display.hpp"
 #include "donor.hpp"
 #include "receiver.hpp"
 #include "ansi.hpp"
@@ -63,9 +64,12 @@ bool CheckLogin(const string& username, const string& password) {
 
 // Function to handle user login
 void Login() {
+    cout << CLEAR;
+    Display(logo);
     string username, password;
     int attempts = 0;
 
+    cout << "Please enter the information in order to login." << endl;
     cout << "Enter username: ";
     cin >> username;
 

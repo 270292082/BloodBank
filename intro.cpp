@@ -28,15 +28,21 @@ void IntroDisplay() {
     cout << endl;
 
     cout << CDEF << CBOLD;
-    cout << ".  ..         .          ,      .  .        ." << endl;
-    cout << "|  ||_   .   _| _ ._  _.-+- _   |_ | _  _  _|" << endl;
-    cout << "|/\\|[ )\\_|  (_](_)[ )(_] | (/,  [_)|(_)(_)(_]" << endl;
-    cout << "       ._|" << endl;
+    cout << ".  ..                            _ " << endl;
+    cout << "|  ||_  _    _.._. _   .    , _ ' )" << endl;
+    cout << "|/\\|[ )(_)  (_][  (/,   \\/\\/ (/, ;" << endl;
     cout << CDEF;
     cout << endl;
+    cout << "Helixire Laboratory Blood Center, established in the early 2000s, is dedicated to the noble cause of collecting blood from generous donors to provide life-saving transfusions to those in need." << endl;
+    cout << "However, Helixire's mission goes beyond traditional blood donation. In their state-of-the-art research facilities, they conduct groundbreaking experiments on the collected blood." << endl;
+    cout << "Their innovative work aims to enhance the blood's properties, potentially transforming it into a more potent and viable resource." << endl;
+    cout << "By modifying and optimizing the blood, Helixire Laboratory is pioneering new ways to improve transfusion outcomes and revolutionize medical treatments for countless patients." << endl;
+
+    /*
     cout << "Regular weekly donations ensure blood and plasma are available for those in need." << endl;
     cout << "The gift of blood can only be given from one person to another, and there is no substitute. So it's nice to know New Zealand can rely on everyday heroes' generosity to keep the flow of blood and plasma going." << endl;
     cout << "However, the need for blood and plasma is constant, so we're looking for more lifesavers. By putting aside a small part of your day you can make a life-changing difference, you can become a lifesaver too!" << endl;
+    */
     cout << endl;
     return;
 

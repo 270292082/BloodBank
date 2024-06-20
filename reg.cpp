@@ -119,7 +119,7 @@ void DonorRegInit() {
     Display(logo);
     string val;
 
-    cout << "Please enter the needed informations in order to register." << endl;
+    cout << "Please enter the informations in order to register." << endl;
     
     
     vector<string> info;

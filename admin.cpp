@@ -29,6 +29,7 @@ void AdminDisplay() {
 }
 
 void AdminInit() {
+    cout << CLEAR;
     AdminDisplay();
 
     while(true) {
