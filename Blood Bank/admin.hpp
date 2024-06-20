@@ -1,0 +1,2 @@
+void AdminDisplay();
+void AdminInit();
